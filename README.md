@@ -13,3 +13,10 @@ Below is an example of an industrial production line of 3 work machines. For eac
 
 ## Benefits 
 This architecture can be scaled to many different industrial CNC (and machines) simply by writing ad hoc C# services and Python plug-ins.
+
+# Install and Run
+```
+pip install
+python data_collector.py
+
+```
