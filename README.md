@@ -71,7 +71,8 @@ Sample and valid data are in **sample_data.json**
 
 In a real Industry 4.0 scenario, data was sent to the Broker from C# services connected to the CNC for variable retrieval.
 Nevertheless, it is possible to send data to the broker manually using a simple MQTT client such as mqttx.app (https://mqttx.app).
-I also provide you a very simple **cnn_service_emulator.py** you can run to automatically send data of **sample_data.json** to the broker.
+
+I also provide you with a very simple **cnc_service_emulator.py** you can run to automatically send data from **sample_data.json** to the broker.
 
 It is evident how the application is strongly decoupled from the hardware.
 
