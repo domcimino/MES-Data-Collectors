@@ -16,7 +16,7 @@ This architecture can be scaled to many different industrial CNC (and machines) 
 
 
 
-
+# Install, setup, run and test 
 
 ## Folder Layout
 
@@ -35,12 +35,19 @@ project root directory/
 
 ```
 
+## Requiremets
+1. Python installed into your PC.
+2. A MySQL server access
 
-## Install and Run
-1. Modify **db_config.json** according to your DB configuration
-2. Execute **database,sql** to create the DB schema
+## Install, setup, and run
+1. Unzip the package into a folder and prompt on it
+2. Modify **db_config.json** according to your DB configuration
+3. Execute **database,sql** to create the DB schema
 
-Optionaly modify **main.py** if you need to use a differnt Broker
+Optionaly modify **main.py** if you need to use a differnt Broker. By default a free one is used
+
+Finally:
+
 
 ```
 pip install paho-mqtt (only once)
