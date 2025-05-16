@@ -36,9 +36,27 @@ project root directory/
 ```
 
 
-# Install and Run
+## Install and Run
+1. Modify **db_config.json** according to your DB configuration
+2. Execute **database,sql** to create the DB schema
+
+Optionaly modify **main.py** if you need to use a differnt Broker
+
 ```
-pip install
+pip install paho-mqtt (only once)
 python data_collector.py
 
 ```
+
+
+## Test the application
+To test the application, you need to send the following data to the broker:
+
+{"cnc_id": "CNC001","part_program": "program_01","timestamp": "1747379028","payload":{"status": "running","spin":200,"X-Axis":30,"Y-Axis":80}}
+
+Sample and valid data are in **sample_data.json**
+
+In a real scenario, data was submitted by the C # Service.
+
+Note: Data must be in a valid JSON format containing 4 fields: cnc_id, part_program, timestamp, and payload. Payload itself must be a valid JSON with arbitrary values
+
