@@ -70,5 +70,5 @@ Sample and valid data are in **sample_data.json**
 
 In a real scenario, data was submitted by the C # Service.
 
-Note: Data must be in a valid JSON format containing 4 fields: cnc_id, part_program, timestamp, and payload. Payload itself must be a valid JSON with arbitrary values
+Note: Data must be in a valid JSON format containing 4 fields: **cnc_id**, **part_program**, **timestamp**, and **payload**. Since there are CNCS with different characteristics and that handle different variables, the field payload is itself a valid JSON with arbitrary keys/values ​​(containing values ​​from a specific CNC).
 
