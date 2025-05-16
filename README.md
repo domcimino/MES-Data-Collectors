@@ -10,7 +10,8 @@ The project has been deliberately simplified compared to the original one, curre
 Below is a prototype industrial environment for running the Python services I developed
 
 ## Architecture description (simplified)
-Below is a prototype industrial environment for running the Python services I developed
+Below is a prototype of an industrial environment for running the Python services I developed.
+
 Is an industrial production line of 3 work machines. For each machine, its CNC is shown. Connected to each CNC is a custom C# Service (data collector)  that reads the CNC variables and posts them to an MQTT Broker. Then, the  Python Service I developed is subscribed to the Broker and acts as a data receiver. It processes the received data by using external and configurable Python sub-modules, acting as plug-ins. There is one Python plugin for processing data regarding each CNC. Each Python plugin stores data in the Mysql database. Finally, a MES web application is connected to the DB to read data. 
 
 ![enter image description here](https://github.com/domcimino/MES-Data-Collectors/blob/main/resources/architecture.png)
