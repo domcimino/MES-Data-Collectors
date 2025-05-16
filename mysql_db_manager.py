@@ -36,7 +36,7 @@ class MySqlDbManager:
             print("[ERROR] No active database connection.")
             return
 
-        # 🔁 Ensure values are MySQL-safe (convert dicts to JSON)
+        # Ensure values are MySQL-safe (convert dicts to JSON)
         safe_values = []
         for v in values:
             if isinstance(v, (dict, list)):
