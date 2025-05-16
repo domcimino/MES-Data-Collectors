@@ -1,0 +1,4 @@
+[
+  { "cnc_id": "CNC001", "class_name": "CNCTypeA" },
+  { "cnc_id": "CNC002", "class_name": "CNCTypeB" }
+]

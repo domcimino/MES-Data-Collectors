@@ -1,0 +1,6 @@
+{
+  "host": "localhost",
+  "user": "use",
+  "password": "password",
+  "database": "cnc_database"
+}

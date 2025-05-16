@@ -1,0 +1,3 @@
+{"cnc_id": "CNC001","part_program": "program_01","timestamp": "1747379028","payload":{"status": "running","spin":200,"X-Axis":30,"Y-Axis":80}}
+{"cnc_id": "CNC002","part_program": "program_02","timestamp": "1747379030","payload":{"status": "idle","spin":0,"X-Axis":0,"Y-Axis":0}}
+{"cnc_id": "CNC001","part_program": "program_03","timestamp": "1747379035","payload":{"status": "error","spin":100,"X-Axis":25,"Y-Axis":75}}
