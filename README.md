@@ -68,7 +68,9 @@ To test the application, you need to send the following data to the broker:
 
 Sample and valid data are in **sample_data.json**
 
-In a real scenario, data was submitted by the C # Service.
+In a real Industry 4.0 scenario, data was sent to the Broker from C# services connected to the CNC for variable retrieval.
+Nevertheless, it is possible to send data to the broker manually using a simple MQTT client such as mqttx.app (https://mqttx.app).
+It is evident how the application is strongly decoupled from the hardware.
 
 Note: Data must be in a valid JSON format containing 4 fields: **cnc_id**, **part_program**, **timestamp**, and **payload**. Since there are CNCS with different characteristics and that handle different variables, the field payload is itself a valid JSON with arbitrary keys/values ​​(containing values ​​from a specific CNC).
 
