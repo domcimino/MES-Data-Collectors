@@ -7,7 +7,6 @@ A data collector written in Python that interfaces with an MQTT broker to access
 I created this project as part of a training internship.
 
 The project has been deliberately simplified compared to the original one, currently used at a manufacturing company. It implements only the basic functionality of the architecture presented in the following diagram.
-Below is a prototype industrial environment for running the Python services I developed
 
 ## Architecture description (simplified)
 Below is a prototype of an industrial environment for running the Python services I developed.
@@ -72,6 +71,8 @@ Sample and valid data are in **sample_data.json**
 
 In a real Industry 4.0 scenario, data was sent to the Broker from C# services connected to the CNC for variable retrieval.
 Nevertheless, it is possible to send data to the broker manually using a simple MQTT client such as mqttx.app (https://mqttx.app).
+I also provide you a very simple **cnn_service_emulator.py** you can run to automatically send data of **sample_data.json** to the broker.
+
 It is evident how the application is strongly decoupled from the hardware.
 
 Note: Data must be in a valid JSON format containing 4 fields: **cnc_id**, **part_program**, **timestamp**, and **payload**. Since there are CNCS with different characteristics and that handle different variables, the field payload is itself a valid JSON with arbitrary keys/values ​​(containing values ​​from a specific CNC).
