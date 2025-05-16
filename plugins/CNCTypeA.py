@@ -1,3 +1,4 @@
+# Plugin for 
 class CNCTypeA:
     def __init__(self, data, db_manager):
         print(f"Calling [CNCTypeA] Plugin for handling data: {data}")
