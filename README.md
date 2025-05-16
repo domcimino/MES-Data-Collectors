@@ -64,8 +64,10 @@ python main.py
 ## Test the application
 To test the application, you need to send the following data to the broker:
 
+```
 {"cnc_id": "CNC001","part_program": "program_01","timestamp": "1747379028","payload":{"status": "running","spin":200,"X-Axis":30,"Y-Axis":80}}
 
+```
 Sample and valid data are in **sample_data.json**
 
 In a real Industry 4.0 scenario, data was sent to the Broker from C# services connected to the CNC for variable retrieval.
