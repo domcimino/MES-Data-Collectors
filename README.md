@@ -36,6 +36,7 @@ project root directory/
 ├── cnc_service_emulator.py     # A very simple C# service emulator sending data to the btroker
 ├── plugins/                    # CNC classes (plugins implementation. Theuìy are loaded dynamically)
 │   ├── __init__.py
+│   ├── cnc_plugin_interface.py # Plugin Interface (all custom plugins must iplements it)
 │   ├── CNCTypeA.py             # Prototype of class impementing plugin handling CNC001
 │   └── CNCTypeB.py             # Prototype of class impementing plugin handling CNC000
 
