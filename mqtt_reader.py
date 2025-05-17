@@ -2,6 +2,7 @@ import json
 import paho.mqtt.client as mqtt
 from pathlib import Path
 from mysql_db_manager import MySqlDbManager
+from plugins.cnc_plugin_interface import CncPlugin
 import importlib
 import sys
 
@@ -62,8 +63,8 @@ class MQTTReader:
                 module = importlib.import_module(class_name)
                 cls = getattr(module, class_name)
                 instance = cls(data, self.db_manager)
-                # Optionally: do something with instance here..
-              
+                # instance = cls(data, self.db_manager)
+                # Optionally: do something with instance here.. 
             except Exception as e:
                 print(f"[ERROR] Failed to import or instantiate '{class_name}': {e}")
 
