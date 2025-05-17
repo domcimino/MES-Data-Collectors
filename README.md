@@ -33,7 +33,7 @@ project root directory/
 ├── db_config.json              # MySQL connection configuration (modify according your MySQL parameter)
 ├── mysql_db_manager.py         # MySqlDbManager class
 ├── database,sql                # DB creation scriptt (run it agaist your MySQL to create the db)
-├── cnc_service_emulator.py     # A very simple C# service emulator sending data to the btroker
+├── cnc_service_emulator.py     # A very simple C# service emulator sending data to the broker
 ├── plugins/                    # CNC classes (plugins implementation. Theuìy are loaded dynamically)
 │   ├── __init__.py
 │   ├── cnc_plugin_interface.py # Plugin Interface (all custom plugins must iplements it)
