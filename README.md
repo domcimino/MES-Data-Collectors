@@ -95,12 +95,18 @@ You should see:
 3. For each data it calls the appropriate Plugin to store it into the database
 4. DataBase is populated with the data received
 
-If you try to send not allowed data you should also see the service raise an exception
-Data must be in a valid JSON format containing 4 fields: **cnc_id**, **part_program**, **timestamp**, and **payload**. Since there are CNCS with different characteristics and that handle different variables, the field payload is itself a valid JSON with arbitrary keys/values ​​(containing values ​​from a specific CNC).
+If you try to send not allowed data you should also see the service raise an exception because data must be in a valid JSON format containing 4 fields: 
+
+**cnc_id**, **part_program**, **timestamp**, and **payload**. 
+
+Since there are CNCS with different characteristics and that handle different variables, the field payload is itself a valid JSON with arbitrary keys/values ​​(containing values ​​from a specific CNC).
 
 ## Benefits 
-The architecture can be easily scaled to many work machines by adding, for each work node, a custom C# service and Python plugin.
-It is evident how the application is strongly decoupled from the hardware.
+Main benefits are:
+1. The architecture can be easily scaled to many work machines by adding, for each work node, a custom C# service and Python plugin.
+2. It is evident how the application is strongly decoupled from the hardware.
 
+
+(O Open/Closed) Il sistema è aperto al cambiamento tramite aggiunta di  nuovi  componenti (Servizi c# e Plugin Python ) che possono essere scritti secondo le interffaccie di dati e di metodi. Non occore alcuna modifica al codice (modifica chiusa)
 
 
