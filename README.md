@@ -105,8 +105,3 @@ Since there are CNCS with different characteristics and that handle different va
 Main benefits are:
 1. The architecture can be easily scaled to many work machines by adding, for each work node, a custom C# service and Python plugin.
 2. It is evident how the application is strongly decoupled from the hardware.
-
-
-(O Open/Closed) Il sistema è aperto al cambiamento tramite aggiunta di  nuovi  componenti (Servizi c# e Plugin Python ) che possono essere scritti secondo le interffaccie di dati e di metodi. Non occore alcuna modifica al codice (modifica chiusa)
-
-
