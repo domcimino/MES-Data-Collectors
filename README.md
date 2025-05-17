@@ -84,7 +84,6 @@ Then start the emulator to send sample CNC data to the broker
 
 
 ```
-pip install paho-mqtt (only once)
 python cnc_service_emulator.py
 
 ```
@@ -92,7 +91,7 @@ python cnc_service_emulator.py
 You should see:
 1. Python service successfully connected to MySQL and Broker
 2. It receives data
-3 For each data it calls the appropriate Plugin to store it into the database
+3. For each data it calls the appropriate Plugin to store it into the database
 4. DataBase is populated with the data received
 
 If you try to send not allowed data you should also see the service raise an exception
