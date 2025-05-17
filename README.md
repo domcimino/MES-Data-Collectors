@@ -3,10 +3,9 @@ A python project I developed in the context of industry 4.0
 
 
 ## Introduction
-A data collector written in Python that interfaces with an MQTT broker to access data from CNCS of industrial plants.
-I created this project as part of a training internship.
+A data collector written in Python that interfaces with an MQTT broker to access data from CNCS of industrial plants. I created this project as part of a training internship for a HORIZON 2020 project owned by a manufacturing company.
 
-The project has been deliberately simplified compared to the original one, currently used at a manufacturing company. It implements only the basic functionality of the architecture presented in the following diagram.
+The project has been deliberately simplified compared with the original one. This simplified release just implements only the basic functionalities of the architecture presented in the following diagram. Many features, such as authentication and security, were intentionally omitted.
 
 ## Architecture description (simplified)
 Below is a prototype of an industrial environment for running the Python services I developed.
