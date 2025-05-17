@@ -1,5 +1,6 @@
-# Simple CNC Data Processing Plugin implementation 
-class CNCTypeA:
+from cnc_plugin_interface import CncPlugin
+
+class CNCTypeA(CncPlugin):
     def __init__(self, data, db_manager):
         print(f"Calling [CNCTypeA] Plugin for handling data: {data}")
         try:

@@ -1,4 +1,6 @@
-class CNCTypeB:
+from cnc_plugin_interface import CncPlugin
+
+class CNCTypeB(CncPlugin):
     def __init__(self, data, db_manager):
         print(f"Calling [CNCTypeB] Plugin for handling data: {data}")
         try:
