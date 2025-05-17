@@ -8,14 +8,16 @@ A data collector written in Python that interfaces with an MQTT broker to access
 The project has been deliberately simplified compared with the original one. This simplified release just implements only the basic functionalities of the architecture presented in the following diagram. Many features, such as authentication and security, were intentionally omitted.
 
 ## Architecture description (simplified)
-Below is a prototype of an industrial environment for running the Python services I developed.
+Below is a prototype diagram of an industrial environment to explain the roles of the Python services I developed.
 
-Is an industrial production line of 3 work machines. For each machine, its CNC is shown. Connected to each CNC is a custom C# Service (data collector)  that reads the CNC variables and posts them to an MQTT Broker. Then, the  Python Service I developed is subscribed to the Broker and acts as a data receiver. It processes the received data by using external and configurable Python sub-modules, acting as plug-ins. There is one Python plugin for processing data regarding each CNC. Each Python plugin stores data in the Mysql database. Finally, a MES web application is connected to the DB to read data. 
+The diagram shows a basic production line composite of 3 work machines. For each machine, its CNC is also shown. 
+
+Connected to each CNC is a custom C# Service (data collector)  that reads the CNC variables and posts them to an MQTT Broker. 
+
+Then, the  Python Service I developed is subscribed to the Broker and acts as a data receiver. It processes the received data by using external and configurable Python sub-modules, acting as plug-ins. There is one Python plugin for processing data regarding each CNC. Each Python plugin stores data in the MySQL database. Finally, a MES web application is connected to the DB to read data. 
 
 ![enter image description here](https://github.com/domcimino/MES-Data-Collectors/blob/main/resources/architecture.png)
 
-## Benefits 
-This architecture can be scaled to many different industrial CNC (and machines) simply by writing ad hoc C# services and Python plug-ins.
 
 
 
@@ -43,24 +45,20 @@ project root directory/
 1. Python installed into your PC.
 2. A MySQL server access
 
-## Install, setup, and run
+## Install and setup
 1. Unzip the package into a folder and prompt on it
 2. Modify **db_config.json** according to your DB configuration
 3. Execute **database,sql** to create the DB schema
 
 Optionaly modify **main.py** if you need to use a differnt Broker. By default a free one is used
 
-Finally:
-
-
-```
-pip install paho-mqtt (only once)
-python main.py
+Finally go into the project directory and execute:
 
 ```
+pip install paho-mqtt 
+```
 
-
-## Test the application
+## Run and the application
 To test the application, you need to send the following data to the broker:
 
 ```
@@ -74,7 +72,35 @@ Nevertheless, it is possible to send data to the broker manually using a simple 
 
 I also provide you with a very simple **cnc_service_emulator.py** you can run to automatically send data from **sample_data.json** to the broker.
 
+So to run the application, first run the Python Service
+
+
+```
+python main.py
+
+```
+
+Then start the emulator to send sample CNC data to the broker
+
+
+```
+pip install paho-mqtt (only once)
+python cnc_service_emulator.py
+
+```
+
+You should see:
+1. Python service successfully connected to MySQL and Broker
+2. It receives data
+3 For each data it calls the appropriate Plugin to store it into the database
+4. DataBase is populated with the data received
+
+If you try to send not allowed data you should also see the service raise an exception
+Data must be in a valid JSON format containing 4 fields: **cnc_id**, **part_program**, **timestamp**, and **payload**. Since there are CNCS with different characteristics and that handle different variables, the field payload is itself a valid JSON with arbitrary keys/values ​​(containing values ​​from a specific CNC).
+
+## Benefits 
+The architecture can be easily scaled to many work machines by adding, for each work node, a custom C# service and Python plugin.
 It is evident how the application is strongly decoupled from the hardware.
 
-Note: Data must be in a valid JSON format containing 4 fields: **cnc_id**, **part_program**, **timestamp**, and **payload**. Since there are CNCS with different characteristics and that handle different variables, the field payload is itself a valid JSON with arbitrary keys/values ​​(containing values ​​from a specific CNC).
+
 
