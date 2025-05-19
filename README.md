@@ -12,7 +12,7 @@ Below is a prototype diagram of an industrial environment to explain the roles o
 
 The diagram shows a basic production line composite of 3 work machines. For each machine, its CNC is also shown. 
 
-Connected to each CNC is a custom C# Service (data collector)  that reads the CNC variables and posts them to an MQTT Broker. 
+Connected to each CNC is a custom C# Service (data collector)  that reads the CNC variables and posts them to an MQTT Broker. An example of this kind of service is [here](https://github.com/rcarvello/montronix_data_collectors)
 
 Then, the  Python Service I developed is subscribed to the Broker and acts as a data receiver. It processes the received data by using external and configurable Python sub-modules, acting as plug-ins. There is one Python plugin for processing data regarding each CNC. Each Python plugin stores data in the MySQL database. Finally, a MES web application is connected to the DB to read data. 
 
