@@ -71,7 +71,10 @@ cd "C:\Program Files\MySQL\MySQL Server 8.0\bin"
 
 C:\Program Files\MySQL\MySQL Server 8.0\bin> mysql -u root -p
 Enter password: *********
+```
 
+and run
+```
 mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'newrootpassword';
 
 Query OK, 0 rows affected (0.10 sec)
