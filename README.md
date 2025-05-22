@@ -59,6 +59,32 @@ Finally go into the project directory and execute:
 pip install paho-mqtt 
 ```
 
+## Optional Settings
+Depending on your MySQL and Python configuration, you may get the following error on MySQL authentication:
+
+**caching_sha2_password** cannot be loaded
+
+To resolve it, you need to log in to MySQL as root and run
+
+```
+cd "C:\Program Files\MySQL\MySQL Server 8.0\bin"
+
+C:\Program Files\MySQL\MySQL Server 8.0\bin> mysql -u root -p
+Enter password: *********
+
+mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY 'newrootpassword';
+
+Query OK, 0 rows affected (0.10 sec)
+
+mysql> exit
+```
+For Python:
+
+```
+pip install mysql-connector-python
+```
+
+
 ## Run and the application
 To test the application, you need to send the following data to the broker:
 
